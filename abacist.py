@@ -90,3 +90,4 @@ for meta in events.filter(schema=SCHEMA, webHost='blog.wikimedia.org'):
                 if iv.duration < float('inf'):
                     expires = iv.ordinal_to_epoch(ordinal + iv.period)
                     pipe.expireat(key, expires)
+        pipe.execute()
